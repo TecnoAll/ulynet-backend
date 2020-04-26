@@ -1,0 +1,21 @@
+_schema:
+  title:
+    type: String
+    required: title is required
+  content: String
+  url: String
+  slug: String
+  university:
+    type: String
+    ref: University
+  status: String
+  publishedAt: Date
+  categories:
+    type: [String]
+    ref: Category
+  createdBy:
+    type: String
+    ref: User
+  tags: [String]
+_options:
+  timestamps: true

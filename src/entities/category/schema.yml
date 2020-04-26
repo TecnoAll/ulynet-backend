@@ -1,0 +1,6 @@
+_schema:
+  name:
+    type: String
+    required: name is required
+  description: String
+  tags: [String]

@@ -1,0 +1,11 @@
+_schema:
+  user:
+    type: String
+    ref: User
+  posts:
+    type: [String]
+    ref: Post
+  books:
+    type: [String]
+    ref: Book
+  topics: [String]

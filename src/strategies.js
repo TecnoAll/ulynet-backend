@@ -1,8 +1,7 @@
 /* eslint-disable one-var */
 const LocalStrategy = require('passport-local').Strategy,
-  UserModel = require('agradon')
-    .getMongoose()
-    .model('User');
+  bcrypt = require('bcrypt'),
+  UserModel = require('agradon/mongoose').model('User');
 
 const localStrategy = new LocalStrategy(
   {
@@ -11,10 +10,14 @@ const localStrategy = new LocalStrategy(
   },
   function(email, password, cb) {
     // Assume there is a DB module pproviding a global UserModel
-    return UserModel.findOne({ email, password })
+    return UserModel.findOne({ email })
       .then(user => {
         if (!user) {
-          return cb(null, false, { message: 'Incorrect email or password.' });
+          return cb(null, false, { message: 'Incorrect email.' });
+        }
+
+        if (!bcrypt.compare(password, user.password)) {
+          return cb(null, false, { message: 'Incorrect password.' });
         }
 
         return cb(null, user, {

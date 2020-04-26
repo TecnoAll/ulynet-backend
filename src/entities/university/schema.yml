@@ -1,15 +1,13 @@
 _schema:
-  reason:
+  name:
     type: String
-    ref: Reason
-    required: reason id is required
-  person:
-    type: String
-    ref: Person
+    required: name is required
+  description: String
+  location: Object
+  preferences: Object
   status:
     type: String
     default: unattended
-  attendedAt: Date
   isActive:
     type: Boolean
     default: true

@@ -1,4 +1,6 @@
 _schema:
+  name: String
+  surname: String
   username: String
   email:
     type: String
@@ -6,5 +8,10 @@ _schema:
   password:
     type: String
     required: true
+  favorites:
+    type: String
+    ref: Favorites
+  studentId: String
+  settings: Object
 _options:
   timestamps: true

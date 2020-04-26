@@ -1,0 +1,22 @@
+_schema:
+  title:
+    type: String
+    required: title is required
+  ISBN: String
+  bookLength: String
+  description: String
+  author: String
+  publishedAt: Date
+  uploadedAt: Date
+  categories:
+    type: [String]
+    ref: Category
+  uploadedBy:
+    type: String
+    ref: User
+  tags: [String]
+  isActive:
+    type: Boolean
+    default: true
+_options:
+  timestamps: true
