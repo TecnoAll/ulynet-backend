@@ -1,0 +1,10 @@
+_schema:
+  department:
+    type: String
+    ref: Department
+    required: department id is required
+  name: String
+  description: String
+  isActive:
+    type: Boolean
+    default: true

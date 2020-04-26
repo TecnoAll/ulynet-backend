@@ -1,0 +1,17 @@
+_schema:
+  reason:
+    type: String
+    ref: Reason
+    required: reason id is required
+  person:
+    type: String
+    ref: Person
+  status:
+    type: String
+    default: unattended
+  attendedAt: Date
+  isActive:
+    type: Boolean
+    default: true
+_options:
+  timestamps: true
